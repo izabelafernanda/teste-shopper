@@ -1,7 +1,3 @@
-Aqui está o README traduzido para o português:
-
----
-
 # API de Medição de Água e Gás 🌊💧
 
 ## 🧪 Teste Técnico
