@@ -1,110 +1,114 @@
-# Water and Gas Measurement API 🌊💧
+Aqui está o README traduzido para o português:
 
-## 🧪 Technical Test
+---
 
-This project was developed as part of a technical test for the company Shopper. The initial phase of this test focuses on developing the back-end of an image reading service. The main goals and activities of this phase are as follows:
+# API de Medição de Água e Gás 🌊💧
 
-- **Develop three main endpoints**: 
-  - Measure Upload
-  - Measure Confirmation
-  - Measure Listing
+## 🧪 Teste Técnico
 
-- **Integrate with the Google Gemini API**: To process and extract data from the submitted images.
+Este projeto foi desenvolvido como parte de um teste técnico para a empresa Shopper. A fase inicial deste teste foca no desenvolvimento do back-end de um serviço de leitura de imagens. Os principais objetivos e atividades desta fase são os seguintes:
 
-### Requirements
+- **Desenvolver três endpoints principais**: 
+  - Upload de Medida
+  - Confirmação de Medida
+  - Listagem de Medidas
 
-- **Read technical specifications in English** and understand business requirements.
-- **Develop a REST API** using Node.js and TypeScript.
-- **Have a basic understanding of database modeling**.
-- **Create and manage Docker containers**.
-- **Use Git for version control**.
+- **Integrar com a API do Google Gemini**: Para processar e extrair dados das imagens enviadas.
 
-## 📜 Application Documentation
+### Requisitos
 
-### Table of Contents
-- [📋 Overview](#-overview)
-- [🚀 Project Setup](#-project-setup)
-- [▶️ Running the Application](#️-running-the-application)
-- [📡 API Endpoints](#-api-endpoints)
-  - [📤 Measure Upload](#-measure-upload)
-  - [✅ Measure Confirmation](#-measure-confirmation)
-  - [📜 List Measures](#-list-measures)
+- **Ler especificações técnicas em inglês** e entender os requisitos de negócios.
+- **Desenvolver uma API REST** usando Node.js e TypeScript.
+- **Ter uma compreensão básica de modelagem de banco de dados**.
+- **Criar e gerenciar containers Docker**.
+- **Usar Git para controle de versão**.
 
-## 📋 Overview
+## 📜 Documentação da Aplicação
 
-This application is a REST API service for managing water and gas consumption measurements from customers. Measurement data is stored in a PostgreSQL database, and images associated with the measurements are processed and stored locally. The application uses Google Gemini to process images and extract measurement values.
+### Índice
+- [📋 Visão Geral](#-visão-geral)
+- [🚀 Configuração do Projeto](#-configuração-do-projeto)
+- [▶️ Executando a Aplicação](#️-executando-a-aplicação)
+- [📡 Endpoints da API](#-endpoints-da-api)
+  - [📤 Upload de Medida](#-upload-de-medida)
+  - [✅ Confirmação de Medida](#-confirmação-de-medida)
+  - [📜 Listagem de Medidas](#-listagem-de-medidas)
 
-## 🚀 Project Setup
+## 📋 Visão Geral
 
-### Prerequisites
+Esta aplicação é um serviço de API REST para gerenciar medições de consumo de água e gás de clientes. Os dados das medições são armazenados em um banco de dados PostgreSQL, e as imagens associadas às medições são processadas e armazenadas localmente. A aplicação utiliza o Google Gemini para processar imagens e extrair valores de medição.
 
-Ensure you have the following installed on your machine:
+## 🚀 Configuração do Projeto
 
-- [Node.js](https://nodejs.org/) (version 14.x or higher)
-- [PostgreSQL](https://www.postgresql.org/) (version 12.x or higher)
-- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) (for Docker setup)
+### Pré-requisitos
+
+Certifique-se de que você tem o seguinte instalado em sua máquina:
+
+- [Node.js](https://nodejs.org/) (versão 14.x ou superior)
+- [PostgreSQL](https://www.postgresql.org/) (versão 12.x ou superior)
+- [Docker](https://www.docker.com/) e [Docker Compose](https://docs.docker.com/compose/) (para configuração com Docker)
 - [Git](https://git-scm.com/)
 
-### Setup Steps
+### Passos para Configuração
 
-1. **Clone the repository**:
+1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/your-username/repository-name.git
-   cd repository-name
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
    ```
 
-2. **Install dependencies**:
+2. **Instale as dependências**:
    ```bash
    npm install
    ```
 
-3. **Configure the database**:
-   - Create a PostgreSQL database.
-   - Copy the `.env.example` file to `.env` and update the environment variables with your database information and the Gemini API key.
+3. **Configure o banco de dados**:
+   - Crie um banco de dados PostgreSQL.
+   - Copie o arquivo `.env.example` para `.env` e atualize as variáveis de ambiente com as informações do seu banco de dados e a chave da API do Gemini.
 
-4. **Run database migrations**:
+4. **Execute as migrações do banco de dados**:
    ```bash
    npx prisma migrate dev
    ```
 
-## ▶️ Running the Application
+## ▶️ Executando a Aplicação
 
-After setup, you can start the application with the following command:
+Após a configuração, você pode iniciar a aplicação com o seguinte comando:
 
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:3000`.
+A aplicação estará disponível em `http://localhost:3000`.
 
-### Using Docker
+### Usando Docker
 
-1. **Clone the repository**:
+1. **Clone o repositório**:
    ```bash
-   git clone https://github.com/your-username/repository-name.git
-   cd repository-name
+   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   cd nome-do-repositorio
    ```
 
-2. **Create a `.env` file at the root of the project with the Gemini API key**:
+2. **Crie um arquivo `.env` na raiz do projeto com a chave da API do Gemini**:
    ```env
    GEMINI_API_KEY=your_gemini_api_key
    ```
 
-3. **Start the containers**:
+3. **Suba os containers**:
    ```bash
    docker-compose up --build
    ```
 
-   - PostgreSQL database will be started, and the application will be built and run.
-   - The API will be available at `http://localhost:3000`.
+   - O banco de dados PostgreSQL será iniciado, e a aplicação será construída e executada.
+   - A API estará disponível em `http://localhost:3000`.
 
-## 📡 API Endpoints
+## 📡 Endpoints da API
 
-### 📤 Measure Upload
+### 📤 Upload de Medida
 
 **Endpoint**: POST /api/measures/upload
 
-**Description**: Uploads a new consumption measurement.
+**Descrição**: Envia uma nova medida de consumo.
 
 **Request Body**:
 ```json
@@ -112,23 +116,23 @@ The application will be available at `http://localhost:3000`.
   "image": "base64",
   "customer_code": "string",
   "measure_datetime": "datetime",
-  "measure_type": "WATER" or "GAS"
+  "measure_type": "WATER" ou "GAS"
 }
 ```
 
 **Response Body**:
 
-| Status Code | Description                        | Response                                                                                                                                          |
-|-------------|------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| 200         | Operation successful               | { "image_url": "string", "measure_value": "integer", "measure_uuid": "string" }                                                                 |
-| 400         | Invalid request data               | { "error_code": "INVALID_DATA", "error_description": "<error description>" }                                                                     |
-| 409         | Duplicate measurement              | { "error_code": "DOUBLE_REPORT", "error_description": "Measurement for the month already recorded" }                                               |
+| Status Code | Descrição                            | Resposta                                                                                                                                             |
+|-------------|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 200         | Operação realizada com sucesso       | { "image_url": "string", "measure_value": "integer", "measure_uuid": "string" }                                                                 |
+| 400         | Dados inválidos na requisição        | { "error_code": "INVALID_DATA", "error_description": "<descrição do erro>" }                                                                        |
+| 409         | Medida duplicada                     | { "error_code": "DOUBLE_REPORT", "error_description": "Leitura do mês já realizada" }                                                              |
 
-### ✅ Measure Confirmation
+### ✅ Confirmação de Medida
 
 **Endpoint**: PATCH /api/measures/confirm
 
-**Description**: Confirms a previously submitted measurement.
+**Descrição**: Confirma uma medida enviada anteriormente.
 
 **Request Body**:
 ```json
@@ -140,27 +144,27 @@ The application will be available at `http://localhost:3000`.
 
 **Response Body**:
 
-| Status Code | Description                        | Response                                                                                                                      |
-|-------------|------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| 200         | Operation successful               | { "success": true }                                                                                                        |
-| 400         | Invalid request data               | { "error_code": "INVALID_DATA", "error_description": "<error description>" }                                                |
+| Status Code | Descrição                            | Resposta                                                                                                                      |
+|-------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| 200         | Operação realizada com sucesso       | { "success": true }                                                                                                        |
+| 400         | Dados inválidos na requisição        | { "error_code": "INVALID_DATA", "error_description": "<descrição do erro>" }                                                |
 
-### 📜 List Measures
+### 📜 Listagem de Medidas
 
 **Endpoint**: GET /api/measures/:customerCode/list
 
-**Description**: Lists all measurements for a specific customer code.
+**Descrição**: Lista todas as medidas para um determinado código de cliente.
 
 **Query Parameters**:
 
-- measure_type (optional): Filters measurements by type (WATER or GAS).
+- measure_type (opcional): Filtra as medidas por tipo (WATER ou GAS).
 
 **Response Body**:
 
-| Status Code | Description                        | Response                                                                                                                                      |
-|-------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| 200         | Operation successful               | [{"id": "string", "customerCode": "string", "measureDatetime": "datetime", "measureType": "string", "measureValue": "integer", "imageUrl": "string"}] |
-| 400         | Invalid request data               | { "error_code": "INVALID_DATA", "error_description": "<error description>" }                                                                |
-| 404         | No measurements found              | { "error_code": "MEASURE_NOT_FOUND", "error_description": "No measurements found" }                                                          |
+| Status Code | Descrição                            | Resposta                                                                                                                                             |
+|-------------|--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 200         | Operação realizada com sucesso       | [{"id": "string", "customerCode": "string", "measureDatetime": "datetime", "measureType": "string", "measureValue": "integer", "imageUrl": "string"}] |
+| 400         | Dados inválidos na requisição        | { "error_code": "INVALID_DATA", "error_description": "<descrição do erro>" }                                                                        |
+| 404         | Nenhuma medida encontrada            | { "error_code": "MEASURE_NOT_FOUND", "error_description": "Nenhuma leitura encontrada" }                                                            |
 
 ---
